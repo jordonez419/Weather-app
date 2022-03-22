@@ -1,38 +1,239 @@
-.App {
-  text-align: center;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* CSS RESET ABOVE */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+html{
+  background:url('https://source.unsplash.com/wpU4veNGnHg/1950x1200') no-repeat center center fixed;
+  background-size:cover;
+}
+body{
+  font-family: 'Merriweather', serif;
+  font-family: 'Modern Antiqua', cursive;
+  font-family: 'MuseoModerno', cursive;
+}
+.outer-container{
+  margin-top: 2rem;
+}
+button{
+  font-family: 'sans-serif';
+  font-size:.9rem;
+  background-color: white;
+  color:black;
+  border-radius: 5px;
+  /* font-family: 'Modern Antiqua', cursive; */
+  /* font-family: 'MuseoModerno', cursive; */
+}
+button:hover{
+  cursor: pointer;
+  transition: .2s;
+  background-color: #FFFAE0;
+}
+.forecast{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: space-between;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.detail{
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+.forecast-day{
+margin: 2rem;
+border: 1px solid black;
+border-radius: 10px;
+padding:2rem;
+background-color: #FFFAE0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+max-width: 6rem;
+color: black;
+} 
+.error{
+  color: red;
+  font-style: oblique;
+}
+
+.margin-bottom{
+margin-bottom: 2rem;
+}
+.margin-top{
+  margin-top: .5rem;
+}
+
+.fixed{
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  width: 45rem;
+  margin: auto;
+  /* margin-top: 1rem; */
+}
+
+.rain{
+  background:url('https://source.unsplash.com/GXEZuWo5m4I/1200x800') no-repeat;
+  background-size:cover;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.storm{
+  background:url('https://source.unsplash.com/wFN9B3s_iik/1200x800') no-repeat;
+  background-size:cover;
+}
+.sunny{
+  background:url('https://source.unsplash.com/HClKQKUodF4/1200x800') no-repeat;
+  background-size:cover;
+ 
+}
+.snow{
+  background:url('https://source.unsplash.com/_TuI8tZHlk4/1200x800') no-repeat;
+  background-size:cover;
+  color: white
+}
+.cold{
+  background:url('https://source.unsplash.com/9GBwZrbT0QU/1200x800') no-repeat;
+  background-size:cover;
+  color: white;
+}
+.hot{
+  background:url('https://source.unsplash.com/CpeUoLVTAs8/1200x800') no-repeat;
+  background-size:cover;
+}
+.overcast{
+  background:url('https://source.unsplash.com/ap3LXI0fPJY/1200x800') no-repeat;
+  background-size:cover;
+}
+.neutral{
+  background:url('https://source.unsplash.com/LY1eyQMFeyo/1200x800') no-repeat;
+  background-size:cover;
+  color: white;
+}
+.cloudy{
+  background:url('https://source.unsplash.com/vDsrPPSuwD0/1200x800') no-repeat;
+  background-size:cover;
+}
+.mist{
+  background:url('https://source.unsplash.com/od287vQyufw/1200x800') no-repeat;
+  background-size:cover;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* Mobile */
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .outer-container{
+    margin-top: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  .fixed{
+    width: 15rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
   }
+  .forecast{
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  } 
+  .forecast-day{
+  height: 35px;
+  margin: .7rem;
+  padding:2rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 12rem;
+  font-size: .88rem;
+    } 
+  .forecast-day p{
+    padding: .09rem;
+    margin-left: .2rem;
+  }
+  button{
+    margin-bottom: 1rem;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+  .fixed{
+    width: 28rem;
+    padding: 1rem;
+  }
+  .forecast{
+    justify-content: center;
+    align-items: space-evenly;
+    margin-top: 1rem;
+  } 
+  .forecast-day{
+    margin: 1rem;
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 6rem;
+    color: black;
+    } 
+}
+/* laptop*/
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+}
+/* Large Screens */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+
 }
