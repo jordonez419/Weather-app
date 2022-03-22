@@ -31,8 +31,7 @@ function WeatherInfo() {
     }
 
     const submit = (e) => {
-        // e.preventDefault();
-        axios.get(`http://api.weatherapi.com/v1/forecast.json?key=ae02d3c40edb44cb998211444221203&q=${city}&days=3&aqi=no&alerts=no
+        axios.get(`https://api.weatherapi.com/v1/forecast.json?key=ae02d3c40edb44cb998211444221203&q=${city}&days=3&aqi=no&alerts=no
         `)
             // .then(res => console.log(res.data))
             .then(res => setInfo({
